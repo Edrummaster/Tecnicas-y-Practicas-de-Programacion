@@ -1,0 +1,119 @@
+ 
+______________________________________
+ tablero
+______________________________________
+-matrix[3][3] : ficha
+
+--------------------------------------
++tablero(etqs : string)
++DibujarTablero()
++obtenerficha(etqueta : Char) ficha*
++verifyFilas(int &fila) bool
++verifyColumnas( int &colmna) bool
++verifyDiag(int &diagonal) bool
++asignarSimbolo(etq1,s1)
+_____________________________________
+
+
+ ---------------------------------------------------------
+  ficha 
+ #simbolo   //solo se acceden en clases derivadas
+ #etiqueta
+ +ficha()
+ +ficha(NuevaEtiqueta : char)
+ +asignarSimbolo(Nuevosimbolo : Char) // pone el simbolo
+ +getSimbolo(): char // que simbolo tiene
+ +dibujarse() imprime el simbolo y la ficha de etiqueta
+ +getEtiqueta(); char
+------------------------------------------------------------
+
+ --------------------------------------------------
+ juego
+ +getInicial(s1,s2 :char) : bool
+ +verificar tricky(tbl)
+ --------------------------------------------------
+
+  ---------------------------------------------
+ | Jugador                                        |
+ |-simbolo : char                                 |
+ |-nombre : string                                |
+ |+Jugador (simbolo: char)                        |
+  +NextJugada(tbl : tablero, nombre :str) : *ficha|
+  +getSimbolo() char                              |
+ ---------------------------------------------
+ /_\
+
+ 
+ -->maquina
+ +nextJugada(tbl) : *ficha
+
+ -->persona
+ +nextJugada(tbl) : *ficha
+
+
+
+***************************************MAIN************************************************
+int main(){
+	
+ 	Tablero tbl("abcdefghi");
+	Persona J1 ('O',"Michell");
+	Maquina J2 ('X',"Hp");
+	Juego game(tbl);
+	
+	do{
+		tbl.dibujarse();
+		char et1 = j1.nextJugada(tbl);
+		char s1= j1.getSimbolo();
+		tbl.asignarSimbolo(s1,et1);
+		if(verifyTricky(tbl)== TRUE){
+			cout<<"el jugador"<< j1.getNombre<< "gano"<< endl;
+			return;
+		}
+		//movimiento  Maquina 
+		//hacer ...H
+		verifyColumnas( int &colmna) bool
+		verifyDiag(int &diagonal) bool
+
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
