@@ -1,36 +1,41 @@
 #include "Ficha.h"
-
 #include <iostream>
 using namespace std;
 
-Ficha::Ficha (){
-	simbolo = '+';
-	etiqueta = '~';
+Ficha::Ficha(){
+	simbolo=' ';
+	etiqueta=' ';
 }
 
-Ficha::Ficha (char nuevoSimbolo, char nuevaEtiqueta){
-	simbolo = nuevoSimbolo;
-	etiqueta = nuevaEtiqueta;
+Ficha::Ficha(char simbolo1, char etiqueta1){
+	simbolo= simbolo1;
+	etiqueta= etiqueta1;
+	
 }
 
-char Ficha::getSimbolo (){
+
+
+
+char Ficha::getSimbolo(){
 	return simbolo;
 }
 
-char Ficha::getEtiqueta (){
+
+void Ficha::setSimbolo(char nsim){
+	simbolo=nsim;
+}
+
+char Ficha::getEtiqueta(){
 	return etiqueta;
+}	
+
+void Ficha::setEtiqueta(char netq ){
+	etiqueta = netq; 
 }
 
-void Ficha::setSimbolo (char nuevoSimbolo){
-	simbolo = nuevoSimbolo;
+void Ficha::dibujarFicha(){
+	cout<< simbolo << "|" <<etiqueta;
 }
 
-void Ficha::intercambiarSimbolos (Ficha *otraFicha){
-	char tmp = simbolo;
-	simbolo = otraFicha->getSimbolo();
-	otraFicha->setSimbolo (tmp);
-}
 
-void Ficha::dibujarse (){
-	cout << simbolo << " " << etiqueta << "\t";
-}
+
